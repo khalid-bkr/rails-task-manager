@@ -1,0 +1,13 @@
+
+<!-- <div class="panel-group"> -->
+<ul class="list">
+<% @tasks.each do |task| %>
+ <li><h2><%= link_to task.name, task_path(task) %></h2>
+  <%= link_to "edit " , edit_task_path(task)  %><br>
+  <%= link_to "Delete ", task_path(task),
+      method: :delete,
+      data: { confirm: "Are you sure?" } %>
+  <% end %></li>
+</ul><br>
+<!-- </div> -->
+<div class="text-center"><%= link_to  "Create a new task" , new_task_path  %></div>
